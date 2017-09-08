@@ -1,0 +1,22 @@
+{
+    "name": "beardedandnotmuch/yii2-onesignal",
+    "description": "yii2-onesignal",
+    "type": "yii2-extension",
+    "require": {
+        "php": "^7.0",
+        "yiisoft/yii2": "^2.0.11",
+        "php-http/guzzle6-adapter": "^1.1",
+        "norkunas/onesignal-php-api": "1.0.x-dev"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Arthur Skobara",
+            "email": "skobara.arthur@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {"beardedandnotmuch\\onesignal\\": "src/"}
+    }
+}
