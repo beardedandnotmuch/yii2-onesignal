@@ -15,12 +15,12 @@ use Http\Message\MessageFactory\GuzzleMessageFactory;
 class Component extends BaseCompnent
 {
     /**
-     * @var string
+     * @var string|callable
      */
     public $appId;
 
     /**
-     * @var string
+     * @var string|callable
      */
     public $apiKey;
 
@@ -39,8 +39,16 @@ class Component extends BaseCompnent
      */
     public function init()
     {
+        if (is_callable($this->appId)) {
+            $this->appId = call_user_func($this->appId);
+        }
+
         if (empty($this->appId)) {
             throw new Exception('Configure onesignal appId!');
+        }
+
+        if (is_callable($this->apiKey)) {
+            $this->apiKey = call_user_func($this->apiKey);
         }
 
         if (empty($this->apiKey)) {
